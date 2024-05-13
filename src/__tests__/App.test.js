@@ -1,6 +1,11 @@
-import { render, screen } from "@testing-library/react";
-import '@testing-library/jest-dom';
+import { pointsForWord } from "../utils";
 
-import App from "../App";
+describe("pointsForWord", () => {
+  it("calculates the total points for a word (1 point per vowel, 2 per consonant)", () => {
+    const word = "test";
 
-// Your tests here
+    const points = pointsForWord(word);
+
+    expect(points).toBe(7);
+  });
+});
